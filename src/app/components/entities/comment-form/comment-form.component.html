@@ -1,0 +1,27 @@
+<h2>{{ editMode ? 'Edit' : 'Create' }} Comment
+    <button mat-raised-button (click)="onSave()">{{ editMode ? 'Save' : 'Create' }}</button>
+    <ng-container *ngIf="editMode">
+        <button mat-raised-button (click)="onDelete()">Delete</button>
+    </ng-container>
+</h2>
+<div class="inputField">
+    <mat-form-field appearance="outline">
+        <mat-label>Content</mat-label>
+        <input matInput placeholder="content" [value]="entity?.content" (change)="onChange('content', $event)">
+        <mat-hint>The content of the comment</mat-hint>
+    </mat-form-field>
+</div>
+<div class="inputField">
+    <mat-form-field appearance="outline">
+        <mat-label>Issue</mat-label>
+        <input #issue matInput placeholder="issue" [value]="entity?.issueId" (change)="onChange('issueId', $event)">
+        <mat-hint>The issue the comment belongs to</mat-hint>
+    </mat-form-field>
+</div>
+<div class="inputField">
+    <mat-form-field appearance="outline">
+        <mat-label>Author</mat-label>
+        <input #author matInput placeholder="author" [value]="entity?.authorId" (change)="onChange('authorId', $event)">
+        <mat-hint>The user who made the comment</mat-hint>
+    </mat-form-field>
+</div>

@@ -1,0 +1,16 @@
+{
+    "map": {
+		"entities": "entities",
+		"basic": "basic"
+	},
+    "filename": "src/app/components/error-snackbar/error-snackbar.component.html"
+}
+---
+<span class="snackbar-label" matSnackBarLabel>
+  \{{data}}
+</span>
+<span matSnackBarActions class="snackbar-icon">
+    <button mat-button matSnackBarAction (click)="snackBarRef.dismissWithAction()">
+      <mat-icon aria-hidden="false" aria-label="Close snackbar" fontIcon="close"></mat-icon>
+    </button>
+</span>

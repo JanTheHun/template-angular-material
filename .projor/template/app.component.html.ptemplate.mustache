@@ -1,0 +1,21 @@
+{
+	"map": {
+		"entities": "entities",
+		"basic": "basic"
+	},
+	"filename": "src/app/app.component.html",
+    "formatUsing": "html"
+}
+---
+<mat-toolbar>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="goHome()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Projor Angular / Material frontend</span>
+</mat-toolbar>
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened><app-main-drawer></app-main-drawer></mat-drawer>
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

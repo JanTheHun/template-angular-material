@@ -1,0 +1,27 @@
+<h2>{{ editMode ? 'Edit' : 'Create' }} UserAccount
+    <button mat-raised-button (click)="onSave()">{{ editMode ? 'Save' : 'Create' }}</button>
+    <ng-container *ngIf="editMode">
+        <button mat-raised-button (click)="onDelete()">Delete</button>
+    </ng-container>
+</h2>
+<div class="inputField">
+    <mat-form-field appearance="outline">
+        <mat-label>Loginname</mat-label>
+        <input matInput placeholder="loginname" [value]="entity?.loginname" (change)="onChange('loginname', $event)">
+        <mat-hint>No description provided.</mat-hint>
+    </mat-form-field>
+</div>
+<div class="inputField">
+    <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="email" [value]="entity?.email" (change)="onChange('email', $event)">
+        <mat-hint>No description provided.</mat-hint>
+    </mat-form-field>
+</div>
+<div class="inputField">
+    <mat-form-field appearance="outline">
+        <mat-label>DisplayName</mat-label>
+        <input matInput placeholder="displayName" [value]="entity?.displayName" (change)="onChange('displayName', $event)">
+        <mat-hint>No description provided.</mat-hint>
+    </mat-form-field>
+</div>

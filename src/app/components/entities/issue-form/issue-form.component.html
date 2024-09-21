@@ -1,0 +1,41 @@
+<h2>{{ editMode ? 'Edit' : 'Create' }} Issue
+    <button mat-raised-button (click)="onSave()">{{ editMode ? 'Save' : 'Create' }}</button>
+    <ng-container *ngIf="editMode">
+        <button mat-raised-button (click)="onDelete()">Delete</button>
+    </ng-container>
+</h2>
+<div class="inputField">
+    <mat-form-field appearance="outline">
+        <mat-label>Title</mat-label>
+        <input matInput placeholder="title" [value]="entity?.title" (change)="onChange('title', $event)">
+        <mat-hint>The title of the issue</mat-hint>
+    </mat-form-field>
+</div>
+<div class="inputField">
+    <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <input matInput placeholder="description" [value]="entity?.description" (change)="onChange('description', $event)">
+        <mat-hint>A detailed description of the issue</mat-hint>
+    </mat-form-field>
+</div>
+<div class="inputField">
+    <mat-form-field appearance="outline">
+        <mat-label>Status</mat-label>
+        <input matInput placeholder="status" [value]="entity?.status" (change)="onChange('status', $event)">
+        <mat-hint>The status of the issue (e.g., Open, In Progress, Closed)</mat-hint>
+    </mat-form-field>
+</div>
+<div class="inputField">
+    <mat-form-field appearance="outline">
+        <mat-label>Reporter</mat-label>
+        <input #reporter matInput placeholder="reporter" [value]="entity?.reporterId" (change)="onChange('reporterId', $event)">
+        <mat-hint>The user who reported the issue</mat-hint>
+    </mat-form-field>
+</div>
+<div class="inputField">
+    <mat-form-field appearance="outline">
+        <mat-label>Assignee</mat-label>
+        <input #assignee matInput placeholder="assignee" [value]="entity?.assigneeId" (change)="onChange('assigneeId', $event)">
+        <mat-hint>The user assigned to the issue</mat-hint>
+    </mat-form-field>
+</div>

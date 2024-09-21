@@ -1,0 +1,11 @@
+{
+	"map": {
+		"entities": "entities",
+		"basic": "basic"
+	},
+	"filename": "src/app/components/main-drawer/main-drawer.component.html"
+}
+---
+<ng-container *ngFor="let table of tables">
+  <button mat-raised-button class="navBtn" (click)="onNavigate(table)">\{{table}}</button>
+</ng-container>

@@ -1,0 +1,35 @@
+{
+	"map": {
+		"entities": "entities",
+		"basic": "basic"
+	},
+	"filename": "src/app/components/main-drawer/main-drawer.component.ts",
+    "formatUsing": "typescript"
+}
+---
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-main-drawer',
+  templateUrl: './main-drawer.component.html',
+  styleUrl: './main-drawer.component.scss'
+})
+export class MainDrawerComponent {
+
+  constructor(
+    private router: Router
+  ) { }
+  
+
+  tables: string[] = [
+    {{#entities}}
+    "{{kebabCase name}}",
+    {{/entities}}
+  ];
+
+  public onNavigate(table: string) {
+    this.router.navigate([table]);
+  }
+}
+

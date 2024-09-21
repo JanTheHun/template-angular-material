@@ -1,0 +1,29 @@
+{
+    "forEach": "entities",
+    "filename": "src/app/components/entities/{{kebabCase name}}-form/{{kebabCase name}}-form.component.html"
+}
+---
+<h2>\{{ editMode ? 'Edit' : 'Create' }} {{pascalCase name}}
+    <button mat-raised-button (click)="onSave()">\{{ editMode ? 'Save' : 'Create' }}</button>
+    <ng-container *ngIf="editMode">
+        <button mat-raised-button (click)="onDelete()">Delete</button>
+    </ng-container>
+</h2>
+{{#each attributes}}
+<div class="inputField">
+    <mat-form-field appearance="outline">
+        <mat-label>{{pascalCase name}}</mat-label>
+        <input matInput placeholder="{{camelCase name}}" [value]="entity?.{{camelCase name}}" (change)="onChange('{{camelCase name}}', $event)">
+        <mat-hint>{{description}}</mat-hint>
+    </mat-form-field>
+</div>
+{{/each}}
+{{#each associations}}
+<div class="inputField">
+    <mat-form-field appearance="outline">
+        <mat-label>{{pascalCase name}}</mat-label>
+        <input #{{camelCase name}} matInput placeholder="{{camelCase name}}" [value]="entity?.{{camelCase name}}Id" (change)="onChange('{{camelCase name}}Id', $event)">
+        <mat-hint>{{description}}</mat-hint>
+    </mat-form-field>
+</div>
+{{/each}}

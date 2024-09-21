@@ -1,0 +1,55 @@
+{
+	"map": {
+		"entities": "entities",
+		"basic": "basic"
+	},
+	"filename": "src/app/app-routing.module.ts",
+    "formatUsing": "typescript"
+}
+---
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { MainContentComponent } from "./components/main-content/main-content.component";
+
+{{#entities}}
+import { {{name}}Component } from "./components/entities/{{kebabCase name}}/{{kebabCase name}}.component";
+{{/entities}}
+{{#entities}}
+import { {{name}}FormComponent } from "./components/entities/{{kebabCase name}}-form/{{kebabCase name}}-form.component";
+{{/entities}}
+
+const routes: Routes = [
+  {
+    path: "main",
+    component: MainContentComponent
+  },
+  {
+    path: "",
+    redirectTo: "/main",
+    pathMatch: "full"
+  },
+  {{#entities}}
+    {
+      path: "{{kebabCase name}}",
+      component: {{name}}Component
+    },
+    {
+      path: "{{kebabCase name}}/:id",
+      component: {{name}}FormComponent
+    },
+    {
+      path: "create/{{kebabCase name}}",
+      component: {{name}}FormComponent
+    },
+  {{/entities}}
+  {
+    path: "**",
+    redirectTo: "/main"
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }

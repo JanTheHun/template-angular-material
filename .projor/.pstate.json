@@ -1,0 +1,286 @@
+{
+  "generatedSource": [
+    {
+      "filename": ".editorconfig",
+      "content": "# Editor configuration, see https://editorconfig.org\r\nroot = true\r\n\r\n[*]\r\ncharset = utf-8\r\nindent_style = space\r\nindent_size = 2\r\ninsert_final_newline = true\r\ntrim_trailing_whitespace = true\r\n\r\n[*.ts]\r\nquote_type = single\r\n\r\n[*.md]\r\nmax_line_length = off\r\ntrim_trailing_whitespace = false",
+      "contentHash": "0580e7d9835d73a5644c19a2e301473dca8130ede6b1e6af05920efa3e5f9287",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": ".gitignore",
+      "content": "# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.\r\n\r\n# Compiled output\r\n/dist\r\n/tmp\r\n/out-tsc\r\n/bazel-out\r\n\r\n# Node\r\n/node_modules\r\nnpm-debug.log\r\nyarn-error.log\r\n\r\n# IDEs and editors\r\n.idea/\r\n.project\r\n.classpath\r\n.c9/\r\n*.launch\r\n.settings/\r\n*.sublime-workspace\r\n\r\n# Visual Studio Code\r\n.vscode/*\r\n!.vscode/settings.json\r\n!.vscode/tasks.json\r\n!.vscode/launch.json\r\n!.vscode/extensions.json\r\n.history/*\r\n\r\n# Miscellaneous\r\n/.angular/cache\r\n.sass-cache/\r\n/connect.lock\r\n/coverage\r\n/libpeerconnection.log\r\ntestem.log\r\n/typings\r\n\r\n# System files\r\n.DS_Store\r\nThumbs.db",
+      "contentHash": "4367fa96577b8ac34c78abe33efe4d8d8ab29e1e12c769e73190bdca05eb723c",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "angular.json",
+      "content": "{\r\n  \"$schema\": \"./node_modules/@angular/cli/lib/config/schema.json\",\r\n  \"version\": 1,\r\n  \"newProjectRoot\": \"projects\",\r\n  \"projects\": {\r\n    \"projor-angular-material\": {\r\n      \"projectType\": \"application\",\r\n      \"schematics\": {\r\n        \"@schematics/angular:component\": {\r\n          \"style\": \"scss\",\r\n          \"standalone\": false\r\n        },\r\n        \"@schematics/angular:directive\": {\r\n          \"standalone\": false\r\n        },\r\n        \"@schematics/angular:pipe\": {\r\n          \"standalone\": false\r\n        }\r\n      },\r\n      \"root\": \"\",\r\n      \"sourceRoot\": \"src\",\r\n      \"prefix\": \"app\",\r\n      \"architect\": {\r\n        \"build\": {\r\n          \"builder\": \"@angular-devkit/build-angular:application\",\r\n          \"options\": {\r\n            \"outputPath\": \"dist/projor-angular-material\",\r\n            \"index\": \"src/index.html\",\r\n            \"browser\": \"src/main.ts\",\r\n            \"polyfills\": [\r\n              \"zone.js\"\r\n            ],\r\n            \"tsConfig\": \"tsconfig.app.json\",\r\n            \"inlineStyleLanguage\": \"scss\",\r\n            \"assets\": [\r\n              \"src/projor-icon.png\",\r\n              \"src/assets\"\r\n            ],\r\n            \"styles\": [\r\n              \"@angular/material/prebuilt-themes/indigo-pink.css\",\r\n              \"src/styles.scss\"\r\n            ],\r\n            \"scripts\": []\r\n          },\r\n          \"configurations\": {\r\n            \"production\": {\r\n              \"budgets\": [\r\n                {\r\n                  \"type\": \"initial\",\r\n                  \"maximumWarning\": \"500kb\",\r\n                  \"maximumError\": \"1mb\"\r\n                },\r\n                {\r\n                  \"type\": \"anyComponentStyle\",\r\n                  \"maximumWarning\": \"2kb\",\r\n                  \"maximumError\": \"4kb\"\r\n                }\r\n              ],\r\n              \"outputHashing\": \"all\"\r\n            },\r\n            \"development\": {\r\n              \"optimization\": false,\r\n              \"extractLicenses\": false,\r\n              \"sourceMap\": true\r\n            }\r\n          },\r\n          \"defaultConfiguration\": \"production\"\r\n        },\r\n        \"serve\": {\r\n          \"builder\": \"@angular-devkit/build-angular:dev-server\",\r\n          \"configurations\": {\r\n            \"production\": {\r\n              \"buildTarget\": \"projor-angular-material:build:production\"\r\n            },\r\n            \"development\": {\r\n              \"buildTarget\": \"projor-angular-material:build:development\"\r\n            }\r\n          },\r\n          \"defaultConfiguration\": \"development\"\r\n        },\r\n        \"extract-i18n\": {\r\n          \"builder\": \"@angular-devkit/build-angular:extract-i18n\",\r\n          \"options\": {\r\n            \"buildTarget\": \"projor-angular-material:build\"\r\n          }\r\n        },\r\n        \"test\": {\r\n          \"builder\": \"@angular-devkit/build-angular:karma\",\r\n          \"options\": {\r\n            \"polyfills\": [\r\n              \"zone.js\",\r\n              \"zone.js/testing\"\r\n            ],\r\n            \"tsConfig\": \"tsconfig.spec.json\",\r\n            \"inlineStyleLanguage\": \"scss\",\r\n            \"assets\": [\r\n              \"src/projor-icon.png\",\r\n              \"src/assets\"\r\n            ],\r\n            \"styles\": [\r\n              \"@angular/material/prebuilt-themes/indigo-pink.css\",\r\n              \"src/styles.scss\"\r\n            ],\r\n            \"scripts\": []\r\n          }\r\n        }\r\n      }\r\n    }\r\n  }\r\n}",
+      "contentHash": "2348079b5232f7455e6afd27aa85d356c48f131b0addc2f7b04f8b0b94311214",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "package.json",
+      "content": "{\r\n  \"name\": \"projor-angular-material\",\r\n  \"version\": \"0.0.0\",\r\n  \"scripts\": {\r\n    \"ng\": \"ng\",\r\n    \"start\": \"ng serve\",\r\n    \"build\": \"ng build\",\r\n    \"watch\": \"ng build --watch --configuration development\",\r\n    \"test\": \"ng test\"\r\n  },\r\n  \"private\": true,\r\n  \"dependencies\": {\r\n    \"@angular/animations\": \"^17.3.0\",\r\n    \"@angular/cdk\": \"^17.3.10\",\r\n    \"@angular/common\": \"^17.3.0\",\r\n    \"@angular/compiler\": \"^17.3.0\",\r\n    \"@angular/core\": \"^17.3.0\",\r\n    \"@angular/forms\": \"^17.3.0\",\r\n    \"@angular/material\": \"^17.3.10\",\r\n    \"@angular/platform-browser\": \"^17.3.0\",\r\n    \"@angular/platform-browser-dynamic\": \"^17.3.0\",\r\n    \"@angular/router\": \"^17.3.0\",\r\n    \"rxjs\": \"~7.8.0\",\r\n    \"tslib\": \"^2.3.0\",\r\n    \"zone.js\": \"~0.14.3\",\r\n    \"ngx-socket-io\": \"~4.6.0\"\r\n  },\r\n  \"devDependencies\": {\r\n    \"@angular-devkit/build-angular\": \"^17.3.9\",\r\n    \"@angular/cli\": \"^17.3.9\",\r\n    \"@angular/compiler-cli\": \"^17.3.0\",\r\n    \"@types/jasmine\": \"~5.1.0\",\r\n    \"jasmine-core\": \"~5.1.0\",\r\n    \"karma\": \"~6.4.0\",\r\n    \"karma-chrome-launcher\": \"~3.2.0\",\r\n    \"karma-coverage\": \"~2.2.0\",\r\n    \"karma-jasmine\": \"~5.1.0\",\r\n    \"karma-jasmine-html-reporter\": \"~2.1.0\",\r\n    \"typescript\": \"~5.4.2\"\r\n  }\r\n}",
+      "contentHash": "818e2b8f9e63c7cc295738f6c9c89220ed441dc4b187ef536ea241cf465ededd",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "README.md",
+      "content": "# Projor generated Angular frontend app",
+      "contentHash": "826555aed3d034f1e5349c748e8bc82eda5b8783031ce0f60c5d81a4de6e79f1",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/app-routing.module.ts",
+      "content": "import { NgModule } from \"@angular/core\";\nimport { RouterModule, Routes } from \"@angular/router\";\nimport { MainContentComponent } from \"./components/main-content/main-content.component\";\n\nimport { UserAccountComponent } from \"./components/entities/user-account/user-account.component\";\nimport { IssueComponent } from \"./components/entities/issue/issue.component\";\nimport { CommentComponent } from \"./components/entities/comment/comment.component\";\nimport { UserAccountFormComponent } from \"./components/entities/user-account-form/user-account-form.component\";\nimport { IssueFormComponent } from \"./components/entities/issue-form/issue-form.component\";\nimport { CommentFormComponent } from \"./components/entities/comment-form/comment-form.component\";\n\nconst routes: Routes = [\n    {\n        path: \"main\",\n        component: MainContentComponent,\n    },\n    {\n        path: \"\",\n        redirectTo: \"/main\",\n        pathMatch: \"full\",\n    },\n    {\n        path: \"user-account\",\n        component: UserAccountComponent,\n    },\n    {\n        path: \"user-account/:id\",\n        component: UserAccountFormComponent,\n    },\n    {\n        path: \"create/user-account\",\n        component: UserAccountFormComponent,\n    },\n    {\n        path: \"issue\",\n        component: IssueComponent,\n    },\n    {\n        path: \"issue/:id\",\n        component: IssueFormComponent,\n    },\n    {\n        path: \"create/issue\",\n        component: IssueFormComponent,\n    },\n    {\n        path: \"comment\",\n        component: CommentComponent,\n    },\n    {\n        path: \"comment/:id\",\n        component: CommentFormComponent,\n    },\n    {\n        path: \"create/comment\",\n        component: CommentFormComponent,\n    },\n    {\n        path: \"**\",\n        redirectTo: \"/main\",\n    },\n];\n\n@NgModule({\n    imports: [RouterModule.forRoot(routes)],\n    exports: [RouterModule],\n})\nexport class AppRoutingModule {}\n",
+      "contentHash": "0e7c4bee0d6a6d6ce8be9647dadc8f947b58b2714c89396fe19e5199d823d432",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/app.component.html",
+      "content": "<mat-toolbar>\n    <button\n        mat-icon-button\n        class=\"example-icon\"\n        aria-label=\"Example icon-button with menu icon\"\n        (click)=\"goHome()\"\n    >\n        <mat-icon>menu</mat-icon>\n    </button>\n    <span>Projor Angular / Material frontend</span>\n</mat-toolbar>\n<mat-drawer-container class=\"example-container\">\n    <mat-drawer mode=\"side\" opened\n        ><app-main-drawer></app-main-drawer\n    ></mat-drawer>\n    <mat-drawer-content>\n        <router-outlet></router-outlet>\n    </mat-drawer-content>\n</mat-drawer-container>\n",
+      "contentHash": "efa2d7c36234f4dd453abcd47ed577025f44b63f51467b7218efd5a1c7477cf1",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/app.component.scss",
+      "content": ".example-container {\n    width: auto;\n    height: calc(100% - 84px);\n    margin: 10px;\n}\n.mat-drawer {\n    width: 200px;\n    background-color: #eee;\n}\n",
+      "contentHash": "ab4a122cf32aaa2d3fbe013b7afe4db606661dd965270752345c50f36de5f6b1",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/app.component.ts",
+      "content": "import { Component } from \"@angular/core\";\nimport { Router } from \"@angular/router\";\n\n@Component({\n    selector: \"app-root\",\n    templateUrl: \"./app.component.html\",\n    styleUrl: \"./app.component.scss\",\n})\nexport class AppComponent {\n    constructor(private router: Router) {}\n    title = \"projor-angular-material\";\n    public goHome(): void {\n        this.router.navigate([\"/\"]);\n    }\n}\n",
+      "contentHash": "0f4a73ed9c85ad86522a991beb42fff52baa5e76faf41bc8f52e4715e2efe2c7",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/app.module.ts",
+      "content": "import { NgModule } from \"@angular/core\";\nimport { BrowserModule } from \"@angular/platform-browser\";\nimport { HttpService } from \"./services/http.service\";\nimport { HttpClientModule } from \"@angular/common/http\";\nimport { FormsModule } from \"@angular/forms\";\n\nimport { AppRoutingModule } from \"./app-routing.module\";\nimport { AppComponent } from \"./app.component\";\nimport { provideAnimationsAsync } from \"@angular/platform-browser/animations/async\";\nimport { MainDrawerComponent } from \"./components/main-drawer/main-drawer.component\";\nimport { MainContentComponent } from \"./components/main-content/main-content.component\";\nimport { ErrorSnackbarComponent } from \"./components/error-snackbar/error-snackbar.component\";\nimport { SuccessSnackbarComponent } from \"./components/success-snackbar/success-snackbar.component\";\nimport { AppService } from \"./app.service\";\n\n//  App components\nimport { UserAccountComponent } from \"./components/entities/user-account/user-account.component\";\nimport { IssueComponent } from \"./components/entities/issue/issue.component\";\nimport { CommentComponent } from \"./components/entities/comment/comment.component\";\nimport { UserAccountFormComponent } from \"./components/entities/user-account-form/user-account-form.component\";\nimport { IssueFormComponent } from \"./components/entities/issue-form/issue-form.component\";\nimport { CommentFormComponent } from \"./components/entities/comment-form/comment-form.component\";\n\n//  Material modules\nimport { MatSidenavModule } from \"@angular/material/sidenav\";\nimport { MatButtonModule } from \"@angular/material/button\";\nimport { MatTableModule } from \"@angular/material/table\";\nimport { MatFormFieldModule } from \"@angular/material/form-field\";\nimport { MatIconModule } from \"@angular/material/icon\";\nimport { MatInputModule } from \"@angular/material/input\";\nimport { MatToolbarModule } from \"@angular/material/toolbar\";\nimport { MatSnackBarModule } from \"@angular/material/snack-bar\";\n\n@NgModule({\n    declarations: [\n        AppComponent,\n        MainDrawerComponent,\n        MainContentComponent,\n        ErrorSnackbarComponent,\n        SuccessSnackbarComponent,\n        UserAccountComponent,\n        IssueComponent,\n        CommentComponent,\n        UserAccountFormComponent,\n        IssueFormComponent,\n        CommentFormComponent,\n    ],\n    imports: [\n        FormsModule,\n        HttpClientModule,\n        BrowserModule,\n        AppRoutingModule,\n        MatSidenavModule,\n        MatButtonModule,\n        MatTableModule,\n        MatFormFieldModule,\n        MatIconModule,\n        MatInputModule,\n        MatToolbarModule,\n        MatSnackBarModule,\n    ],\n    providers: [provideAnimationsAsync(), AppService, HttpService],\n    bootstrap: [AppComponent],\n})\nexport class AppModule {}\n",
+      "contentHash": "3dac5f058189431e678709e9e8913597bce4a55d4d791450ff1008d5d017aa19",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/app.service.ts",
+      "content": "import { Injectable, inject } from \"@angular/core\";\nimport { MatSnackBar } from \"@angular/material/snack-bar\";\nimport { ErrorSnackbarComponent } from \"./components/error-snackbar/error-snackbar.component\";\nimport { SuccessSnackbarComponent } from \"./components/success-snackbar/success-snackbar.component\";\n\n@Injectable()\nexport class AppService {\n    private _snackBar = inject(MatSnackBar);\n\n    durationInSeconds = 2;\n\n    openConfirmSnackBar(message: string) {\n        this._snackBar.openFromComponent(SuccessSnackbarComponent, {\n            duration: this.durationInSeconds * 1000,\n            data: message,\n            panelClass: \"success-snackbar\",\n        });\n    }\n\n    openErrorSnackBar(message: string) {\n        this._snackBar.openFromComponent(ErrorSnackbarComponent, {\n            duration: this.durationInSeconds * 1000,\n            data: message,\n            panelClass: \"error-snackbar\",\n        });\n    }\n}\n",
+      "contentHash": "b2cf5196a2780e6aa8a10e0caa1f1525a306f704019f6083866084edb92e7464",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/components/entities/comment-form/comment-form.component.html",
+      "content": "<h2>{{ editMode ? 'Edit' : 'Create' }} Comment\r\n    <button mat-raised-button (click)=\"onSave()\">{{ editMode ? 'Save' : 'Create' }}</button>\r\n    <ng-container *ngIf=\"editMode\">\r\n        <button mat-raised-button (click)=\"onDelete()\">Delete</button>\r\n    </ng-container>\r\n</h2>\r\n<div class=\"inputField\">\r\n    <mat-form-field appearance=\"outline\">\r\n        <mat-label>Content</mat-label>\r\n        <input matInput placeholder=\"content\" [value]=\"entity?.content\" (change)=\"onChange('content', $event)\">\r\n        <mat-hint>The content of the comment</mat-hint>\r\n    </mat-form-field>\r\n</div>\r\n<div class=\"inputField\">\r\n    <mat-form-field appearance=\"outline\">\r\n        <mat-label>Issue</mat-label>\r\n        <input #issue matInput placeholder=\"issue\" [value]=\"entity?.issueId\" (change)=\"onChange('issueId', $event)\">\r\n        <mat-hint>The issue the comment belongs to</mat-hint>\r\n    </mat-form-field>\r\n</div>\r\n<div class=\"inputField\">\r\n    <mat-form-field appearance=\"outline\">\r\n        <mat-label>Author</mat-label>\r\n        <input #author matInput placeholder=\"author\" [value]=\"entity?.authorId\" (change)=\"onChange('authorId', $event)\">\r\n        <mat-hint>The user who made the comment</mat-hint>\r\n    </mat-form-field>\r\n</div>\r\n",
+      "contentHash": "403baa45ea00780df8abeb1b55e9f8ad08f380aac8e17dcbe7e63990b704567c",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/components/entities/comment-form/comment-form.component.scss",
+      "content": "h2 {\n    padding-left: 20px;\n}\n.inputField {\n    margin: 10px;\n\n    mat-form-field {\n        width: 100%;\n        max-width: 500px;\n    }\n}\n",
+      "contentHash": "14ede1cf595fcdbc289087a9f024ee5373ca0a689fc84b1e364fde5e306e9e46",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/components/entities/comment-form/comment-form.component.ts",
+      "content": "import { Component, OnInit } from \"@angular/core\";\nimport { HttpService } from \"../../../services/http.service\";\nimport { Router, ActivatedRoute } from \"@angular/router\";\nimport { AppService } from \"../../../app.service\";\n\n@Component({\n    selector: \"app-comment-form\",\n    templateUrl: \"./comment-form.component.html\",\n    styleUrl: \"./comment-form.component.scss\",\n})\nexport class CommentFormComponent implements OnInit {\n    editMode: boolean = true;\n    entityId: string | null = null;\n    entity: any = {\n        content: null,\n        issueId: null,\n        authorId: null,\n    };\n\n    constructor(\n        private httpService: HttpService,\n        private router: Router,\n        private route: ActivatedRoute,\n        private appService: AppService\n    ) {}\n\n    ngOnInit() {\n        this.entityId = this.route.snapshot.params[\"id\"];\n        if (!this.entityId) {\n            this.editMode = false;\n            return;\n        }\n        this.httpService\n            .getRequest(\"comment\", this.entityId)\n            .then((data: any) => {\n                if (data) {\n                    this.entity = data;\n                    this.editMode = true;\n                }\n            })\n            .catch((error: any) => {\n                this.appService.openErrorSnackBar(\"Could not load entities\");\n            });\n    }\n\n    public onChange(property: string, event: any): void {\n        this.entity[property] = event.target.value;\n    }\n\n    public onSave(): void {\n        this.httpService\n            .postRequest(\"comment\", this.entity, this.entityId)\n            .then((data: any) => {\n                if (data) {\n                    this.appService.openConfirmSnackBar(\"Entity saved\");\n                    this.router.navigate([\"/comment\"]);\n                }\n            })\n            .catch((error: any) => {\n                this.appService.openErrorSnackBar(\"Could not save entity\");\n            });\n    }\n\n    public onDelete(): void {\n        this.httpService\n            .deleteRequest(\"comment\", this.entityId)\n            .then((data: any) => {\n                this.appService.openConfirmSnackBar(\"Entity deleted\");\n                this.router.navigate([\"/comment\"]);\n            })\n            .catch((error: any) => {\n                this.appService.openErrorSnackBar(\"Could not delete entity\");\n            });\n    }\n}\n",
+      "contentHash": "6b127c9f9fef7c48234a906f4c80ccea25b28afd9371be0f43053dbc73919653",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/components/entities/comment/comment.component.html",
+      "content": "<h2>Comment <button mat-raised-button (click)=\"onCreate()\">Create Comment</button></h2>\r\n<table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8\">\r\n\r\n        <ng-container matColumnDef=\"content\">\r\n            <th mat-header-cell *matHeaderCellDef> content </th>\r\n            <td mat-cell *matCellDef=\"let element\"> {{element.content }} </td>\r\n        </ng-container>\r\n        <ng-container matColumnDef=\"issue\">\r\n            <th mat-header-cell *matHeaderCellDef> issue </th>\r\n            <td mat-cell *matCellDef=\"let element\"> {{element.issueId }} </td>\r\n        </ng-container>\r\n        <ng-container matColumnDef=\"author\">\r\n            <th mat-header-cell *matHeaderCellDef> author </th>\r\n            <td mat-cell *matCellDef=\"let element\"> {{element.authorId }} </td>\r\n        </ng-container>\r\n  \r\n    <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n    <tr mat-row (click)=\"onRowClick(row)\" class=\"tableRow\" *matRowDef=\"let row; columns: displayedColumns;\"></tr>\r\n</table>",
+      "contentHash": "4f02fc17a3bef29681629dfd0307868f8e14035e140ee69761a9def71507e3bc",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/components/entities/comment/comment.component.scss",
+      "content": "h2 {\n    padding-left: 20px;\n}\n.mat-mdc-table {\n    width: calc(100% - 16px);\n    margin-left: 8px;\n}\n.mdc-data-table__table {\n    min-width: unset;\n}\n",
+      "contentHash": "9cc4319d799e2894d41816e9fc49d9bd7e9292bfe5f9724bf67c3b82c5fe3355",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/components/entities/comment/comment.component.ts",
+      "content": "import { Component, OnInit } from \"@angular/core\";\nimport { HttpService } from \"../../../services/http.service\";\nimport { Router } from \"@angular/router\";\n\n@Component({\n    selector: \"app-comment\",\n    templateUrl: \"./comment.component.html\",\n    styleUrl: \"./comment.component.scss\",\n})\nexport class CommentComponent implements OnInit {\n    dataSource: any[] = [];\n    displayedColumns: string[] = [\"content\", \"issue\", \"author\"];\n\n    constructor(private httpService: HttpService, private router: Router) {}\n\n    ngOnInit() {\n        this.httpService\n            .getRequest(\"comment\")\n            .then((data: any) => {\n                this.dataSource = data;\n            })\n            .catch((error: any) => {\n                console.log(error);\n            });\n    }\n\n    public onRowClick(row: any) {\n        this.router.navigate([\"/comment\", row.id]);\n    }\n\n    public onCreate(): void {\n        this.router.navigate([\"/create/comment\"]);\n    }\n}\n",
+      "contentHash": "e39b8f73ed1e2bf21399141fdbae9a8fbf69908f7f9ba87a43e52de04583975d",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/components/entities/issue-form/issue-form.component.html",
+      "content": "<h2>{{ editMode ? 'Edit' : 'Create' }} Issue\r\n    <button mat-raised-button (click)=\"onSave()\">{{ editMode ? 'Save' : 'Create' }}</button>\r\n    <ng-container *ngIf=\"editMode\">\r\n        <button mat-raised-button (click)=\"onDelete()\">Delete</button>\r\n    </ng-container>\r\n</h2>\r\n<div class=\"inputField\">\r\n    <mat-form-field appearance=\"outline\">\r\n        <mat-label>Title</mat-label>\r\n        <input matInput placeholder=\"title\" [value]=\"entity?.title\" (change)=\"onChange('title', $event)\">\r\n        <mat-hint>The title of the issue</mat-hint>\r\n    </mat-form-field>\r\n</div>\r\n<div class=\"inputField\">\r\n    <mat-form-field appearance=\"outline\">\r\n        <mat-label>Description</mat-label>\r\n        <input matInput placeholder=\"description\" [value]=\"entity?.description\" (change)=\"onChange('description', $event)\">\r\n        <mat-hint>A detailed description of the issue</mat-hint>\r\n    </mat-form-field>\r\n</div>\r\n<div class=\"inputField\">\r\n    <mat-form-field appearance=\"outline\">\r\n        <mat-label>Status</mat-label>\r\n        <input matInput placeholder=\"status\" [value]=\"entity?.status\" (change)=\"onChange('status', $event)\">\r\n        <mat-hint>The status of the issue (e.g., Open, In Progress, Closed)</mat-hint>\r\n    </mat-form-field>\r\n</div>\r\n<div class=\"inputField\">\r\n    <mat-form-field appearance=\"outline\">\r\n        <mat-label>Reporter</mat-label>\r\n        <input #reporter matInput placeholder=\"reporter\" [value]=\"entity?.reporterId\" (change)=\"onChange('reporterId', $event)\">\r\n        <mat-hint>The user who reported the issue</mat-hint>\r\n    </mat-form-field>\r\n</div>\r\n<div class=\"inputField\">\r\n    <mat-form-field appearance=\"outline\">\r\n        <mat-label>Assignee</mat-label>\r\n        <input #assignee matInput placeholder=\"assignee\" [value]=\"entity?.assigneeId\" (change)=\"onChange('assigneeId', $event)\">\r\n        <mat-hint>The user assigned to the issue</mat-hint>\r\n    </mat-form-field>\r\n</div>\r\n",
+      "contentHash": "01a71b97564c01d70322b83dfc7ea2a16d5d1b24341b059bf8ff43f7ffd60065",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/components/entities/issue-form/issue-form.component.scss",
+      "content": "h2 {\n    padding-left: 20px;\n}\n.inputField {\n    margin: 10px;\n\n    mat-form-field {\n        width: 100%;\n        max-width: 500px;\n    }\n}\n",
+      "contentHash": "14ede1cf595fcdbc289087a9f024ee5373ca0a689fc84b1e364fde5e306e9e46",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/components/entities/issue-form/issue-form.component.ts",
+      "content": "import { Component, OnInit } from \"@angular/core\";\nimport { HttpService } from \"../../../services/http.service\";\nimport { Router, ActivatedRoute } from \"@angular/router\";\nimport { AppService } from \"../../../app.service\";\n\n@Component({\n    selector: \"app-issue-form\",\n    templateUrl: \"./issue-form.component.html\",\n    styleUrl: \"./issue-form.component.scss\",\n})\nexport class IssueFormComponent implements OnInit {\n    editMode: boolean = true;\n    entityId: string | null = null;\n    entity: any = {\n        title: null,\n        description: null,\n        status: null,\n        reporterId: null,\n        assigneeId: null,\n    };\n\n    constructor(\n        private httpService: HttpService,\n        private router: Router,\n        private route: ActivatedRoute,\n        private appService: AppService\n    ) {}\n\n    ngOnInit() {\n        this.entityId = this.route.snapshot.params[\"id\"];\n        if (!this.entityId) {\n            this.editMode = false;\n            return;\n        }\n        this.httpService\n            .getRequest(\"issue\", this.entityId)\n            .then((data: any) => {\n                if (data) {\n                    this.entity = data;\n                    this.editMode = true;\n                }\n            })\n            .catch((error: any) => {\n                this.appService.openErrorSnackBar(\"Could not load entities\");\n            });\n    }\n\n    public onChange(property: string, event: any): void {\n        this.entity[property] = event.target.value;\n    }\n\n    public onSave(): void {\n        this.httpService\n            .postRequest(\"issue\", this.entity, this.entityId)\n            .then((data: any) => {\n                if (data) {\n                    this.appService.openConfirmSnackBar(\"Entity saved\");\n                    this.router.navigate([\"/issue\"]);\n                }\n            })\n            .catch((error: any) => {\n                this.appService.openErrorSnackBar(\"Could not save entity\");\n            });\n    }\n\n    public onDelete(): void {\n        this.httpService\n            .deleteRequest(\"issue\", this.entityId)\n            .then((data: any) => {\n                this.appService.openConfirmSnackBar(\"Entity deleted\");\n                this.router.navigate([\"/issue\"]);\n            })\n            .catch((error: any) => {\n                this.appService.openErrorSnackBar(\"Could not delete entity\");\n            });\n    }\n}\n",
+      "contentHash": "af7b22d8faaf72501d457126bd2b3da8cefadfb560a6ca3ab211091ae3a9cdd4",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/components/entities/issue/issue.component.html",
+      "content": "<h2>Issue <button mat-raised-button (click)=\"onCreate()\">Create Issue</button></h2>\r\n<table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8\">\r\n\r\n        <ng-container matColumnDef=\"title\">\r\n            <th mat-header-cell *matHeaderCellDef> title </th>\r\n            <td mat-cell *matCellDef=\"let element\"> {{element.title }} </td>\r\n        </ng-container>\r\n        <ng-container matColumnDef=\"description\">\r\n            <th mat-header-cell *matHeaderCellDef> description </th>\r\n            <td mat-cell *matCellDef=\"let element\"> {{element.description }} </td>\r\n        </ng-container>\r\n        <ng-container matColumnDef=\"status\">\r\n            <th mat-header-cell *matHeaderCellDef> status </th>\r\n            <td mat-cell *matCellDef=\"let element\"> {{element.status }} </td>\r\n        </ng-container>\r\n        <ng-container matColumnDef=\"reporter\">\r\n            <th mat-header-cell *matHeaderCellDef> reporter </th>\r\n            <td mat-cell *matCellDef=\"let element\"> {{element.reporterId }} </td>\r\n        </ng-container>\r\n        <ng-container matColumnDef=\"assignee\">\r\n            <th mat-header-cell *matHeaderCellDef> assignee </th>\r\n            <td mat-cell *matCellDef=\"let element\"> {{element.assigneeId }} </td>\r\n        </ng-container>\r\n  \r\n    <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n    <tr mat-row (click)=\"onRowClick(row)\" class=\"tableRow\" *matRowDef=\"let row; columns: displayedColumns;\"></tr>\r\n</table>",
+      "contentHash": "a6d9027d12eeff3717d03ac4e3ea1f5e6da05c49939df9e3fbbdebedbe499092",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/components/entities/issue/issue.component.scss",
+      "content": "h2 {\n    padding-left: 20px;\n}\n.mat-mdc-table {\n    width: calc(100% - 16px);\n    margin-left: 8px;\n}\n.mdc-data-table__table {\n    min-width: unset;\n}\n",
+      "contentHash": "9cc4319d799e2894d41816e9fc49d9bd7e9292bfe5f9724bf67c3b82c5fe3355",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/components/entities/issue/issue.component.ts",
+      "content": "import { Component, OnInit } from \"@angular/core\";\nimport { HttpService } from \"../../../services/http.service\";\nimport { Router } from \"@angular/router\";\n\n@Component({\n    selector: \"app-issue\",\n    templateUrl: \"./issue.component.html\",\n    styleUrl: \"./issue.component.scss\",\n})\nexport class IssueComponent implements OnInit {\n    dataSource: any[] = [];\n    displayedColumns: string[] = [\n        \"title\",\n        \"description\",\n        \"status\",\n        \"reporter\",\n        \"assignee\",\n    ];\n\n    constructor(private httpService: HttpService, private router: Router) {}\n\n    ngOnInit() {\n        this.httpService\n            .getRequest(\"issue\")\n            .then((data: any) => {\n                this.dataSource = data;\n            })\n            .catch((error: any) => {\n                console.log(error);\n            });\n    }\n\n    public onRowClick(row: any) {\n        this.router.navigate([\"/issue\", row.id]);\n    }\n\n    public onCreate(): void {\n        this.router.navigate([\"/create/issue\"]);\n    }\n}\n",
+      "contentHash": "765439829b9f5bade4c9bbff7ac193d63185e5a5cf6ce67664937f4cbed51d52",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/components/entities/user-account-form/user-account-form.component.html",
+      "content": "<h2>{{ editMode ? 'Edit' : 'Create' }} UserAccount\r\n    <button mat-raised-button (click)=\"onSave()\">{{ editMode ? 'Save' : 'Create' }}</button>\r\n    <ng-container *ngIf=\"editMode\">\r\n        <button mat-raised-button (click)=\"onDelete()\">Delete</button>\r\n    </ng-container>\r\n</h2>\r\n<div class=\"inputField\">\r\n    <mat-form-field appearance=\"outline\">\r\n        <mat-label>Loginname</mat-label>\r\n        <input matInput placeholder=\"loginname\" [value]=\"entity?.loginname\" (change)=\"onChange('loginname', $event)\">\r\n        <mat-hint>No description provided.</mat-hint>\r\n    </mat-form-field>\r\n</div>\r\n<div class=\"inputField\">\r\n    <mat-form-field appearance=\"outline\">\r\n        <mat-label>Email</mat-label>\r\n        <input matInput placeholder=\"email\" [value]=\"entity?.email\" (change)=\"onChange('email', $event)\">\r\n        <mat-hint>No description provided.</mat-hint>\r\n    </mat-form-field>\r\n</div>\r\n<div class=\"inputField\">\r\n    <mat-form-field appearance=\"outline\">\r\n        <mat-label>DisplayName</mat-label>\r\n        <input matInput placeholder=\"displayName\" [value]=\"entity?.displayName\" (change)=\"onChange('displayName', $event)\">\r\n        <mat-hint>No description provided.</mat-hint>\r\n    </mat-form-field>\r\n</div>\r\n",
+      "contentHash": "4ec124bf79613ad11fece803988d924ee40326dac2af2fdde39ae5bcc875ae52",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/components/entities/user-account-form/user-account-form.component.scss",
+      "content": "h2 {\n    padding-left: 20px;\n}\n.inputField {\n    margin: 10px;\n\n    mat-form-field {\n        width: 100%;\n        max-width: 500px;\n    }\n}\n",
+      "contentHash": "14ede1cf595fcdbc289087a9f024ee5373ca0a689fc84b1e364fde5e306e9e46",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/components/entities/user-account-form/user-account-form.component.ts",
+      "content": "import { Component, OnInit } from \"@angular/core\";\nimport { HttpService } from \"../../../services/http.service\";\nimport { Router, ActivatedRoute } from \"@angular/router\";\nimport { AppService } from \"../../../app.service\";\n\n@Component({\n    selector: \"app-user-account-form\",\n    templateUrl: \"./user-account-form.component.html\",\n    styleUrl: \"./user-account-form.component.scss\",\n})\nexport class UserAccountFormComponent implements OnInit {\n    editMode: boolean = true;\n    entityId: string | null = null;\n    entity: any = {\n        loginname: null,\n        email: null,\n        displayName: null,\n    };\n\n    constructor(\n        private httpService: HttpService,\n        private router: Router,\n        private route: ActivatedRoute,\n        private appService: AppService\n    ) {}\n\n    ngOnInit() {\n        this.entityId = this.route.snapshot.params[\"id\"];\n        if (!this.entityId) {\n            this.editMode = false;\n            return;\n        }\n        this.httpService\n            .getRequest(\"user-account\", this.entityId)\n            .then((data: any) => {\n                if (data) {\n                    this.entity = data;\n                    this.editMode = true;\n                }\n            })\n            .catch((error: any) => {\n                this.appService.openErrorSnackBar(\"Could not load entities\");\n            });\n    }\n\n    public onChange(property: string, event: any): void {\n        this.entity[property] = event.target.value;\n    }\n\n    public onSave(): void {\n        this.httpService\n            .postRequest(\"user-account\", this.entity, this.entityId)\n            .then((data: any) => {\n                if (data) {\n                    this.appService.openConfirmSnackBar(\"Entity saved\");\n                    this.router.navigate([\"/user-account\"]);\n                }\n            })\n            .catch((error: any) => {\n                this.appService.openErrorSnackBar(\"Could not save entity\");\n            });\n    }\n\n    public onDelete(): void {\n        this.httpService\n            .deleteRequest(\"user-account\", this.entityId)\n            .then((data: any) => {\n                this.appService.openConfirmSnackBar(\"Entity deleted\");\n                this.router.navigate([\"/user-account\"]);\n            })\n            .catch((error: any) => {\n                this.appService.openErrorSnackBar(\"Could not delete entity\");\n            });\n    }\n}\n",
+      "contentHash": "b9dcc63eccc63e0fadcd327f5c7083675806c2e95b197d1209148cb57544e935",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/components/entities/user-account/user-account.component.html",
+      "content": "<h2>UserAccount <button mat-raised-button (click)=\"onCreate()\">Create UserAccount</button></h2>\r\n<table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8\">\r\n\r\n        <ng-container matColumnDef=\"loginname\">\r\n            <th mat-header-cell *matHeaderCellDef> loginname </th>\r\n            <td mat-cell *matCellDef=\"let element\"> {{element.loginname }} </td>\r\n        </ng-container>\r\n        <ng-container matColumnDef=\"email\">\r\n            <th mat-header-cell *matHeaderCellDef> email </th>\r\n            <td mat-cell *matCellDef=\"let element\"> {{element.email }} </td>\r\n        </ng-container>\r\n        <ng-container matColumnDef=\"displayName\">\r\n            <th mat-header-cell *matHeaderCellDef> displayName </th>\r\n            <td mat-cell *matCellDef=\"let element\"> {{element.displayName }} </td>\r\n        </ng-container>\r\n  \r\n    <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n    <tr mat-row (click)=\"onRowClick(row)\" class=\"tableRow\" *matRowDef=\"let row; columns: displayedColumns;\"></tr>\r\n</table>",
+      "contentHash": "9205f8247ff238b214f642d03234c2d30ce28ba1a3cec7313bb2e18a67fba05f",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/components/entities/user-account/user-account.component.scss",
+      "content": "h2 {\n    padding-left: 20px;\n}\n.mat-mdc-table {\n    width: calc(100% - 16px);\n    margin-left: 8px;\n}\n.mdc-data-table__table {\n    min-width: unset;\n}\n",
+      "contentHash": "9cc4319d799e2894d41816e9fc49d9bd7e9292bfe5f9724bf67c3b82c5fe3355",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/components/entities/user-account/user-account.component.ts",
+      "content": "import { Component, OnInit } from \"@angular/core\";\nimport { HttpService } from \"../../../services/http.service\";\nimport { Router } from \"@angular/router\";\n\n@Component({\n    selector: \"app-user-account\",\n    templateUrl: \"./user-account.component.html\",\n    styleUrl: \"./user-account.component.scss\",\n})\nexport class UserAccountComponent implements OnInit {\n    dataSource: any[] = [];\n    displayedColumns: string[] = [\"loginname\", \"email\", \"displayName\"];\n\n    constructor(private httpService: HttpService, private router: Router) {}\n\n    ngOnInit() {\n        this.httpService\n            .getRequest(\"user-account\")\n            .then((data: any) => {\n                this.dataSource = data;\n            })\n            .catch((error: any) => {\n                console.log(error);\n            });\n    }\n\n    public onRowClick(row: any) {\n        this.router.navigate([\"/user-account\", row.id]);\n    }\n\n    public onCreate(): void {\n        this.router.navigate([\"/create/user-account\"]);\n    }\n}\n",
+      "contentHash": "818cbde833850ec6598bb05c9fd9170d70386ae38f1c72091cc7cbc17c46b01e",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/components/error-snackbar/error-snackbar.component.html",
+      "content": "<span class=\"snackbar-label\" matSnackBarLabel>\r\n  {{data}}\r\n</span>\r\n<span matSnackBarActions class=\"snackbar-icon\">\r\n    <button mat-button matSnackBarAction (click)=\"snackBarRef.dismissWithAction()\">\r\n      <mat-icon aria-hidden=\"false\" aria-label=\"Close snackbar\" fontIcon=\"close\"></mat-icon>\r\n    </button>\r\n</span>",
+      "contentHash": "6c2e8d7a64fddf47f0e6950d7ddcf227172ddfd47886eaef2fd7f419736f29b7",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/components/error-snackbar/error-snackbar.component.scss",
+      "content": ":host {\n    display: flex;\n}\n",
+      "contentHash": "058e41e701bbfccb2e3b9f05df90368a9f278def36081c492dc15df3b8dfdeea",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/components/error-snackbar/error-snackbar.component.ts",
+      "content": "import { Component, Inject, inject } from \"@angular/core\";\nimport {\n    MatSnackBarRef,\n    MAT_SNACK_BAR_DATA,\n} from \"@angular/material/snack-bar\";\n\n@Component({\n    selector: \"app-error-snackbar\",\n    templateUrl: \"./error-snackbar.component.html\",\n    styleUrl: \"./error-snackbar.component.scss\",\n})\nexport class ErrorSnackbarComponent {\n    snackBarRef = inject(MatSnackBarRef);\n    constructor(@Inject(MAT_SNACK_BAR_DATA) public data: string) {}\n}\n",
+      "contentHash": "376f99412a0bff76aeac11348f767fea7128bdf76d88a04348db9fea7a4db03e",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/components/main-content/main-content.component.html",
+      "content": "<h2>Welcome to Projor Angular / Material Frontend!</h2>\r\n<h3>This is a Projor generated frontend for CRUD APIs, using Angular / Material</h3>\r\n<h3>You may start by clicking on an Entity on the left</h3>\r\n<h3>Don't worry, you can always come back to this friendly welcome page by clicking on the menu icon in the top left corner!</h3>",
+      "contentHash": "b547882e8275368718ed6aee0924087f91529cb14796e654a18ae0a69a8c8c32",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/components/main-content/main-content.component.scss",
+      "content": "h2,\nh3 {\n    padding-left: 20px;\n}\n",
+      "contentHash": "91248d1042d995cce9c352b145229d149f22b605573e8bdf6a0d603634bc426e",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/components/main-content/main-content.component.ts",
+      "content": "import { Component } from \"@angular/core\";\n\n@Component({\n    selector: \"app-main-content\",\n    templateUrl: \"./main-content.component.html\",\n    styleUrl: \"./main-content.component.scss\",\n})\nexport class MainContentComponent {}\n",
+      "contentHash": "c46bf209efce5f62057452d4274a0030d8cf1c91e4b6ef03a6b3ca5ecd8fa8d8",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/components/main-drawer/main-drawer.component.html",
+      "content": "<ng-container *ngFor=\"let table of tables\">\r\n  <button mat-raised-button class=\"navBtn\" (click)=\"onNavigate(table)\">{{table}}</button>\r\n</ng-container>",
+      "contentHash": "146ecc3cf13a2cf294c2ed6bd90eab729e1e50676edd55e1d086e09af2ec7e45",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/components/main-drawer/main-drawer.component.scss",
+      "content": ".navBtn {\n    display: block;\n    width: calc(100% - 20px);\n    margin: 10px;\n}\n",
+      "contentHash": "f039aa06ef1730c076f4ddefaa91062b7435786cc6a5ed2b4435ef3db08c5908",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/components/main-drawer/main-drawer.component.ts",
+      "content": "import { Component } from \"@angular/core\";\nimport { Router } from \"@angular/router\";\n\n@Component({\n    selector: \"app-main-drawer\",\n    templateUrl: \"./main-drawer.component.html\",\n    styleUrl: \"./main-drawer.component.scss\",\n})\nexport class MainDrawerComponent {\n    constructor(private router: Router) {}\n\n    tables: string[] = [\"user-account\", \"issue\", \"comment\"];\n\n    public onNavigate(table: string) {\n        this.router.navigate([table]);\n    }\n}\n",
+      "contentHash": "ca441348f0999c2b9101dd3ee79fef4de3b5cf85248c305c2f0d8107a43b93ed",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/components/success-snackbar/success-snackbar.component.html",
+      "content": "<span matSnackBarLabel>\r\n  {{data}}\r\n</span>\r\n<span matSnackBarActions>\r\n  <button mat-button matSnackBarAction (click)=\"snackBarRef.dismissWithAction()\">\r\n    <mat-icon aria-hidden=\"false\" aria-label=\"Close snackbar\" fontIcon=\"close\"></mat-icon>\r\n  </button>\r\n</span>",
+      "contentHash": "a682163af4bce3c2eeefd12b05b629a41bfe2ad038cbd1fea7f5d8fd6cc293a0",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/components/success-snackbar/success-snackbar.component.scss",
+      "content": ":host {\n    display: flex;\n}\n",
+      "contentHash": "058e41e701bbfccb2e3b9f05df90368a9f278def36081c492dc15df3b8dfdeea",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/components/success-snackbar/success-snackbar.component.ts",
+      "content": "import { Component, Inject, inject } from \"@angular/core\";\nimport {\n    MatSnackBarRef,\n    MAT_SNACK_BAR_DATA,\n} from \"@angular/material/snack-bar\";\n\n@Component({\n    selector: \"app-success-snackbar\",\n    templateUrl: \"./success-snackbar.component.html\",\n    styleUrl: \"./success-snackbar.component.scss\",\n})\nexport class SuccessSnackbarComponent {\n    snackBarRef = inject(MatSnackBarRef);\n    constructor(@Inject(MAT_SNACK_BAR_DATA) public data: string) {}\n}\n",
+      "contentHash": "fff2bc7da8a61f54993d02b510cd9ea5733ed3cdd627763fa63de004dfa1a042",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/app/services/http.service.ts",
+      "content": "import { Injectable } from \"@angular/core\";\nimport { Subject } from \"rxjs\";\nimport { HttpClient } from \"@angular/common/http\";\n\n@Injectable()\nexport class HttpService {\n    host = \"http://localhost:8080/backend/v1\";\n    constructor(private http: HttpClient) {}\n\n    public getRequest(\n        table: string,\n        entity: string | null = null\n    ): Promise<any> {\n        return new Promise((resolve, reject) => {\n            this.http\n                .get(`${this.host}/${table}${entity ? \"/\" + entity : \"\"}`)\n                .subscribe(\n                    (result) => {\n                        resolve(result);\n                    },\n                    (error) => {\n                        console.log(error);\n                        reject();\n                    }\n                );\n        });\n    }\n\n    public postRequest(\n        table: string,\n        data: any,\n        entity: string | null = null\n    ): Promise<any> {\n        return new Promise((resolve, reject) => {\n            const dto = {\n                id: entity,\n                ...data,\n            };\n            this.http.post(`${this.host}/${table}`, dto).subscribe(\n                (result) => {\n                    resolve(result);\n                },\n                (error) => {\n                    console.log(error);\n                    reject();\n                }\n            );\n        });\n    }\n\n    public deleteRequest(table: string, entity: string | null): Promise<any> {\n        return new Promise((resolve, reject) => {\n            this.http.delete(`${this.host}/${table}/${entity}`).subscribe(\n                (result) => {\n                    console.log(result);\n                    resolve(result);\n                },\n                (error) => {\n                    console.log(error);\n                    reject();\n                }\n            );\n        });\n    }\n}\n",
+      "contentHash": "8ec782b2a3ecdbbb4c2b9e690e8a017f517426291033db9cdc6cdd6fd6890445",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/index.html",
+      "content": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\" />\n        <title>ProjorAngularMaterial</title>\n        <base href=\"/\" />\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n        <link rel=\"icon\" type=\"image/x-icon\" href=\"projor-icon.png\" />\n        <link\n            href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap\"\n            rel=\"stylesheet\"\n        />\n        <link\n            href=\"https://fonts.googleapis.com/icon?family=Material+Icons\"\n            rel=\"stylesheet\"\n        />\n    </head>\n    <body>\n        <app-root></app-root>\n    </body>\n</html>\n",
+      "contentHash": "169cc7eb725d5586b48e74e2c3ae228069e5b855e1183f48d4545bada4e92f9d",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/main.ts",
+      "content": "import { platformBrowserDynamic } from \"@angular/platform-browser-dynamic\";\n\nimport { AppModule } from \"./app/app.module\";\n\nplatformBrowserDynamic()\n    .bootstrapModule(AppModule)\n    .catch((err) => console.error(err));\n",
+      "contentHash": "c2b6f8e8324054e6ad9fa733da6fe463c78f34f9da2cb3552e7ccabe2f124fb8",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "src/styles.scss",
+      "content": "/* You can add global styles to this file, and also import other style files */\n\nhtml,\nbody {\n    height: 100%;\n}\nbody {\n    margin: 0;\n    font-family: Roboto, \"Helvetica Neue\", sans-serif;\n    position: absolute;\n    width: 100%;\n}\n\n.success-snackbar {\n    --mdc-snackbar-container-color: #eee;\n    --mdc-snackbar-supporting-text-color: #000;\n    .mat-icon {\n        color: #000;\n    }\n}\n\n.error-snackbar {\n    --mdc-snackbar-container-color: #000;\n    --mdc-snackbar-supporting-text-color: #eee;\n    .mat-icon {\n        color: #eee;\n    }\n}\n",
+      "contentHash": "1575b249cd9e8d8752a2602c4b338ffc503f609f74e6e7db9bed9037f7f02209",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "tsconfig.app.json",
+      "content": "/* To learn more about this file see: https://angular.io/config/tsconfig. */\r\n{\r\n  \"extends\": \"./tsconfig.json\",\r\n  \"compilerOptions\": {\r\n    \"outDir\": \"./out-tsc/app\",\r\n    \"types\": []\r\n  },\r\n  \"files\": [\r\n    \"src/main.ts\"\r\n  ],\r\n  \"include\": [\r\n    \"src/**/*.d.ts\"\r\n  ]\r\n}",
+      "contentHash": "0c711338b47add2f588bc09290c03fd07e698078e63367a8d4538d61d605b2c8",
+      "noWriteIfExists": false
+    },
+    {
+      "filename": "tsconfig.json",
+      "content": "/* To learn more about this file see: https://angular.io/config/tsconfig. */\r\n{\r\n\t\"compileOnSave\": false,\r\n  \"compilerOptions\": {\r\n    \"outDir\": \"./dist/out-tsc\",\r\n    \"strict\": true,\r\n    \"noImplicitOverride\": true,\r\n    \"noPropertyAccessFromIndexSignature\": true,\r\n    \"noImplicitReturns\": true,\r\n    \"noFallthroughCasesInSwitch\": true,\r\n    \"skipLibCheck\": true,\r\n    \"esModuleInterop\": true,\r\n    \"sourceMap\": true,\r\n    \"declaration\": false,\r\n    \"experimentalDecorators\": true,\r\n    \"moduleResolution\": \"node\",\r\n    \"importHelpers\": true,\r\n    \"target\": \"ES2022\",\r\n    \"module\": \"ES2022\",\r\n    \"useDefineForClassFields\": false,\r\n    \"lib\": [\r\n      \"ES2022\",\r\n      \"dom\"\r\n    ]\r\n  },\r\n  \"angularCompilerOptions\": {\r\n    \"enableI18nLegacyMessageIdFormat\": false,\r\n    \"strictInjectionParameters\": true,\r\n    \"strictInputAccessModifiers\": true,\r\n    \"strictTemplates\": true\r\n  }\r\n}",
+      "contentHash": "cd0c7c19bf7e3d8bdfc2d4fa8e6547a900cb9d468bb0990d3cdf7943d08d2542",
+      "noWriteIfExists": false
+    }
+  ]
+}

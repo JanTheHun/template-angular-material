@@ -1,0 +1,36 @@
+{
+	"map": {
+		"entities": "entities",
+		"basic": "basic"
+	},
+	"filename": "src/styles.scss",
+    "formatUsing": "scss"
+}
+---
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body {
+	margin: 0;
+	font-family: Roboto, "Helvetica Neue", sans-serif;
+	position: absolute;
+	width: 100%;
+
+
+}
+
+.success-snackbar {
+  --mdc-snackbar-container-color: #eee;
+  --mdc-snackbar-supporting-text-color: #000;
+  .mat-icon {
+	color: #000;
+  }
+}
+
+.error-snackbar {
+  --mdc-snackbar-container-color: #000;
+  --mdc-snackbar-supporting-text-color: #eee;
+  .mat-icon {
+	color: #eee;
+  }
+}

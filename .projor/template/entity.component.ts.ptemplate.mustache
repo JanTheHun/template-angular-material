@@ -1,0 +1,47 @@
+{
+    "forEach": "entities",
+    "filename": "src/app/components/entities/{{kebabCase name}}/{{kebabCase name}}.component.ts",
+    "formatUsing": "typescript"
+}
+---
+
+import { Component, OnInit } from '@angular/core';
+import { HttpService } from "../../../services/http.service";
+import { Router } from "@angular/router";
+
+@Component({
+  selector: 'app-{{kebabCase name}}',
+  templateUrl: './{{kebabCase name}}.component.html',
+  styleUrl: './{{kebabCase name}}.component.scss'
+})
+export class {{pascalCase name}}Component implements OnInit {
+
+  dataSource: any[] = []
+  displayedColumns: string[] = [
+    {{#each attributes}}"{{name}}",{{/each}}
+    {{#each associations}}"{{name}}",{{/each}}
+  ];
+
+  constructor(
+      private httpService: HttpService,
+      private router: Router
+  ) {}
+
+  ngOnInit() {
+    this.httpService.getRequest("{{kebabCase name}}")
+      .then((data: any) => {
+        this.dataSource = data
+      })
+      .catch((error: any) => {
+        console.log(error)
+      })
+  }
+
+  public onRowClick(row: any) {
+    this.router.navigate(["/{{kebabCase name}}", row.id]);
+  }
+
+  public onCreate(): void {
+    this.router.navigate(["/create/{{kebabCase name}}"]);
+  }
+}

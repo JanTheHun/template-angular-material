@@ -1,0 +1,78 @@
+{
+    "forEach": "entities",
+    "filename": "src/app/components/entities/{{kebabCase name}}-form/{{kebabCase name}}-form.component.ts",
+    "formatUsing": "typescript"
+}
+---
+
+import { Component, OnInit } from '@angular/core';
+import { HttpService } from "../../../services/http.service";
+import { Router, ActivatedRoute } from "@angular/router";
+import { AppService } from "../../../app.service";
+
+@Component({
+  selector: 'app-{{kebabCase name}}-form',
+  templateUrl: './{{kebabCase name}}-form.component.html',
+  styleUrl: './{{kebabCase name}}-form.component.scss'
+})
+export class {{pascalCase name}}FormComponent implements OnInit {
+  editMode: boolean = true
+  entityId: string | null = null
+  entity: any = {
+    {{#each attributes}}{{name}}: null,{{/each}}
+    {{#each associations}}{{name}}Id: null,{{/each}}
+  }
+
+  constructor(
+      private httpService: HttpService,
+      private router: Router,
+      private route: ActivatedRoute,
+      private appService: AppService
+  ) {}
+
+  ngOnInit() {
+    this.entityId = this.route.snapshot.params['id']
+    if (!this.entityId) {
+      this.editMode = false;
+      return
+    }
+    this.httpService.getRequest("{{kebabCase name}}", this.entityId)
+      .then((data: any) => {
+        if (data) {
+          this.entity = data;
+          this.editMode = true;
+        }
+      })
+      .catch((error: any) => {
+        this.appService.openErrorSnackBar('Could not load entities')
+      })
+  }
+
+  public onChange(property: string, event: any): void {
+    this.entity[property] = event.target.value
+  }
+
+  public onSave(): void {
+    this.httpService.postRequest("{{kebabCase name}}", this.entity, this.entityId)
+      .then((data: any) => {
+        if (data) {
+          this.appService.openConfirmSnackBar('Entity saved')
+          this.router.navigate(["/{{kebabCase name}}"])
+        }
+      })
+      .catch((error: any) => {
+        this.appService.openErrorSnackBar('Could not save entity')
+      })
+  }
+
+  public onDelete(): void {
+    this.httpService.deleteRequest("{{kebabCase name}}", this.entityId)
+      .then((data: any) => {
+        this.appService.openConfirmSnackBar('Entity deleted')
+        this.router.navigate(["/{{kebabCase name}}"])
+      })
+      .catch((error: any) => {
+        this.appService.openErrorSnackBar('Could not delete entity')
+      })
+  }
+}
