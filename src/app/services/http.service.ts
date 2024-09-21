@@ -1,5 +1,4 @@
 import { Injectable } from "@angular/core";
-import { Subject } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 
 @Injectable()
@@ -14,15 +13,14 @@ export class HttpService {
         return new Promise((resolve, reject) => {
             this.http
                 .get(`${this.host}/${table}${entity ? "/" + entity : ""}`)
-                .subscribe(
-                    (result) => {
+                .subscribe({
+                    next: (result) => {
                         resolve(result);
                     },
-                    (error) => {
-                        console.log(error);
+                    error: (error) => {
                         reject();
-                    }
-                );
+                    },
+                });
         });
     }
 
@@ -36,30 +34,27 @@ export class HttpService {
                 id: entity,
                 ...data,
             };
-            this.http.post(`${this.host}/${table}`, dto).subscribe(
-                (result) => {
+            this.http.post(`${this.host}/${table}`, dto).subscribe({
+                next: (result) => {
                     resolve(result);
                 },
-                (error) => {
-                    console.log(error);
+                error: (error) => {
                     reject();
-                }
-            );
+                },
+            });
         });
     }
 
     public deleteRequest(table: string, entity: string | null): Promise<any> {
         return new Promise((resolve, reject) => {
-            this.http.delete(`${this.host}/${table}/${entity}`).subscribe(
-                (result) => {
-                    console.log(result);
+            this.http.delete(`${this.host}/${table}/${entity}`).subscribe({
+                next: (result) => {
                     resolve(result);
                 },
-                (error) => {
-                    console.log(error);
+                error: (error) => {
                     reject();
-                }
-            );
+                },
+            });
         });
     }
 }
